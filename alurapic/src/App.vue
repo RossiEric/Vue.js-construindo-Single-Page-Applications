@@ -1,61 +1,38 @@
+<!-- deve contar um elemento container para todos os elementos da pagina -->
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+
+  <div id="container">
+    <h1>{{ titulo }}</h1>
+
+    <!-- 
+    dentro de atributos, não podemos usar interpolação exemplo:
+    <img src="{{ foto.url }}" alt="{{ foto.titulo }}">
+    -->
+
+    <!-- para atributos, usar v-bind: exemplo -->
+    <img v-bind:src="foto.url" v-bind:alt="foto.titulo">
+
+    <!-- para atributos, usar tbm apenas ":" exemplo -->
+    <img :src="foto.url" :alt="foto.titulo">
+
   </div>
+
 </template>
 
 <script>
 /* data bind unidirecional, sempre de dados para template, nunca template para dados */
 export default {
-  name: 'app',
-  data () {
+  data() {
     return {
-      msg: 'Bem-vindo ao Vue.js App'
+      titulo: 'Alurapic',
+      foto: {
+        url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTwV4kVzT5McBdGSgqlVeRzubrNH_mOrrkKseDOGFURq20HmsrelEfMU7It',
+        titulo: 'Cachorro'
+      }
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
