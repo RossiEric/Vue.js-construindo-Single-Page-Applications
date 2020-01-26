@@ -1,0 +1,13 @@
+Vue.js: construindo Single Page Applications
+
+//instalacao vue globalmente no sistema operacional
+npm install vue-cli@2.7.0 -g
+
+//criando projeto com template simples
+vue init webpack-simple alurapic
+
+//baixando dependencias
+npm install
+
+//executa o projeto criado
+npm run dev
