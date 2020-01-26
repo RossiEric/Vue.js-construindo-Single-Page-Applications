@@ -20,11 +20,12 @@
 </template>
 
 <script>
+/* data bind unidirecional, sempre de dados para template, nunca template para dados */
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Bem-vindo ao Vue.js App'
     }
   }
 }

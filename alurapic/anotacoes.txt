@@ -11,3 +11,20 @@ npm install
 
 //executa o projeto criado
 npm run dev
+
+//Babel é um transpiler
+//webpack é um module bundler
+
+//App.vue
+//é um template de unico arquivo (exemplo masterPage, shared, etc...)
+//template (apresentação), script (comportamento e dados) e style (o estilo da apresentação)
+
+- Todos os arquivos da pasta src são transformados em um bundle chamado build.js e este é carregado pelo index.html. Inclusive o script do Vue.js faz parte desse arquivo. Então, o próprio Vue.js se encarregará de exibir o conteúdo em index.html interpretando as informações dentro do bundle.
+
+- Em ambiente de desenvolvimento, o endereço /dist/build.js aponta para um endereço no servidor que aponta para um arquivo criado em memória. Esse processo agiliza o tempo de alteração do build.js a cada alteração, melhorando assim sua experiência de desenvolvimento.
+
+- Declaramos componentes em Single File Templates. Esses arquivos nada mais são do que módulos que exportam componentes.
+
+- A estrutura padrão de um componente é composta pelas tags template, script e style.
+
+
