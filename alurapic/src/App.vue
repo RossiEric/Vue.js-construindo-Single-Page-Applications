@@ -4,16 +4,13 @@
   <div id="container">
     <h1>{{ titulo }}</h1>
 
-    <!-- 
-    dentro de atributos, não podemos usar interpolação exemplo:
-    <img src="{{ foto.url }}" alt="{{ foto.titulo }}">
-    -->
+    <ul>
 
-    <!-- para atributos, usar v-bind: exemplo -->
-    <img v-bind:src="foto.url" v-bind:alt="foto.titulo">
+      <li v-for="foto of fotos">
+        <img :src="foto.url" :alt="foto.titulo">
+      </li>
 
-    <!-- para atributos, usar tbm apenas ":" exemplo -->
-    <img :src="foto.url" :alt="foto.titulo">
+    </ul>
 
   </div>
 
@@ -25,10 +22,17 @@ export default {
   data() {
     return {
       titulo: 'Alurapic',
-      foto: {
-        url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTwV4kVzT5McBdGSgqlVeRzubrNH_mOrrkKseDOGFURq20HmsrelEfMU7It',
-        titulo: 'Cachorro'
-      }
+      fotos: [
+        {
+          url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTwV4kVzT5McBdGSgqlVeRzubrNH_mOrrkKseDOGFURq20HmsrelEfMU7It',
+          titulo: 'Cachorro'
+        },
+        {
+          url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhmlmzV4-Sifx5BIc2SXeA-1CtZJf8jb8V_vPZyKbXIQJKU-rkxGO6OM',
+          titulo: 'Gato'
+        }
+      ]
+
     }
   }
 }
