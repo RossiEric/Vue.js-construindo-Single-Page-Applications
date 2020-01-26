@@ -28,3 +28,8 @@ npm run dev
 - A estrutura padrão de um componente é composta pelas tags template, script e style.
 
 
+//vue resource
+npm install vue-resource@1.0.3 --save
+
+//Options / Lifecycle Hooks
+//https://vuejs.org/v2/api/#Options-Lifecycle-Hooks
