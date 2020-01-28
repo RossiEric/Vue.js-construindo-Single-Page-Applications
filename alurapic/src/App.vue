@@ -3,6 +3,11 @@
   <div class="corpo">
     <h1 class="centralizado">{{ titulo }}</h1>
 
+    <!-- v-on:input; data bindings de evento -->
+    <input type="search" class="filtro" v-on:input="filtro = $event.target.value" placeholder="filtre pelo título da foto">
+    
+    {{ filtro }}
+
     <ul class="lista-fotos">
       <li class="lista-fotos-item" v-for="foto of fotos">
 
@@ -30,7 +35,8 @@ export default {
   data() {
     return {
       titulo: 'Alurapic',
-      fotos: []
+      fotos: [],
+      filtro: ''
     }
   },
   //Options / Lifecycle Hooks

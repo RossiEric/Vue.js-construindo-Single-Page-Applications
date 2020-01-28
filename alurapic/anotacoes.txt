@@ -33,3 +33,10 @@ npm install vue-resource@1.0.3 --save
 
 //Options / Lifecycle Hooks
 //https://vuejs.org/v2/api/#Options-Lifecycle-Hooks
+
+
+A diretiva v-bind realiza uma associação que flui da fonte de dados para a view. Qualquer mudança na fonte de dados fará com que a view seja atualizada para representar o novo valor.
+
+A diretiva v-on realiza uma associação de evento que flui da view para a fonte de dados. Qualquer mudança na fonte de dados atualizará a view associada a ela, contanto que haja uma associação através de v-bind.
+
+
