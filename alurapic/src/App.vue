@@ -9,7 +9,7 @@
     {{ filtro }}
 
     <ul class="lista-fotos">
-      <li class="lista-fotos-item" v-for="foto of fotos">
+      <li class="lista-fotos-item" v-for="foto of fotosComFiltro">
 
         <meu-painel :titulo="foto.titulo">
             <img class="imagem-responsiva" :src="foto.url" :alt="foto.titulo">
@@ -37,6 +37,21 @@ export default {
       titulo: 'Alurapic',
       fotos: [],
       filtro: ''
+    }
+  },
+  //isolando lógica
+  computed: {
+    fotosComFiltro() {
+      if (this.filtro) {
+        // filtra a lista, por enquanto vamos retornar uma lista em branco
+        // criando uma expressão com o valor do filtro, insensitivo
+        let exp = new RegExp(this.filtro.trim(), 'i');
+        // retorna apenas as fotos que condizem com a expressão
+        return this.fotos.filter(foto => exp.test(foto.titulo));
+      } else {
+        // se o campo estiver vazio, não filtramos, retornamos a lista
+        return this.fotos;
+      }
     }
   },
   //Options / Lifecycle Hooks
