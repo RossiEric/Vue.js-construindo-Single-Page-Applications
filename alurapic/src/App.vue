@@ -24,7 +24,7 @@
 <script>
 //importando componentes
 //importando componente painel
-import Painel from './components/shred/painel/Painel.vue'
+import Painel from '../src/components/shred/painel/Painel.vue';
 
 /* data bind unidirecional, sempre de dados para template, nunca template para dados */
 export default {
